@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="leetangle.study.client.communicate.http.HttpCommunicatorTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-05-23T10:09:17" hostname="danal-mac01ui-MacBookPro.local" time="0.208">
+  <properties/>
+  <testcase name="test()" classname="leetangle.study.client.communicate.http.HttpCommunicatorTest" time="0.208"/>
+  <system-out><![CDATA[{"value1":1,"value2":"TestData","value3":{"value1":2,"value2":"TestInnerData"}}
+{"value1":1,"value2":"TestData","value3":{"value1":2,"value2":"TestInnerData"}}
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

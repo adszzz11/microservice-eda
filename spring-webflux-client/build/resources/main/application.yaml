@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: spring-webflux-client
+logging:
+  level:
+    root: DEBUG  # 기본 로깅 레벨을 INFO로 설정
+#    com.example: DEBUG  # com.example 패키지의 로깅 레벨을 DEBUG로 설정
+    org.springframework.web: ERROR  # 스프링 웹 관련 로깅 레벨을 ERROR로 설정

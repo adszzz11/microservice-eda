@@ -1,0 +1,35 @@
+Configuration:
+  name: YamlConfigTest
+  status: warn
+  Properties:
+    Property:
+      - name: "log-path"
+        value: "/Users/danal_mac01/work/docker/volume/logs"
+      - name: "pattern"
+        value: "%highlight{[%-5level]}[%d{yyyy-MM-dd HH:mm:ss.SSS}][%X{TID}][%t][%F] - %msg%n"
+      - name: "charset-UTF-8"
+        value: "UTF-8"
+      - name: "filename"
+        value: test.log
+  appenders:
+    Console:
+      name: STDOUT
+      target: SYSTEM_OUT
+      PatternLayout:
+        pattern: ${pattern}
+    RollingFile:
+      name: LogFile
+      fileName: ${log-path}/${filename}
+      filePattern: ${log-path}/test-%d{yyyy-MM-dd-HH-mm}.log
+      PatternLayout:
+        pattern: ${pattern}
+      Policies:
+        TimeBasedTriggeringPolicy:
+          interval: 1
+          modulate: true
+  loggers:
+    root:
+      level: info
+      AppenderRef:
+        - ref: STDOUT
+        - ref: LogFile

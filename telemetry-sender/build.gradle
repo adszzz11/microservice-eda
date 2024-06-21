@@ -1,0 +1,56 @@
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
+//plugins {
+//    id 'org.springframework.boot' version '3.2.5'
+//    id 'io.spring.dependency-management' version '1.1.4'
+//    id 'org.jetbrains.kotlin.jvm' version '1.9.23'
+//    id 'org.jetbrains.kotlin.plugin.spring' version '1.9.23'
+//}
+group = 'leetangle.study'
+version = '0.0.1-SNAPSHOT'
+
+//
+//java {
+//    sourceCompatibility = '17'
+//}
+//
+//repositories {
+//    mavenCentral()
+//}
+//
+
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    runtimeOnly 'io.micrometer:micrometer-registry-prometheus' // 마이크로미터 프로메테우스 구현체
+    implementation 'org.springframework.boot:spring-boot-starter-actuator' // 엑츄에이터
+
+    //Open-telemetry
+    implementation 'io.opentelemetry:opentelemetry-api'
+    implementation 'io.opentelemetry:opentelemetry-sdk'
+    implementation 'io.opentelemetry:opentelemetry-exporter-otlp'
+//    implementation 'io.opentelemetry.instrumentation:opentelemetry-spring-boot-starter'
+
+
+//    for Log4j2
+    implementation 'org.springframework.boot:spring-boot-starter-log4j2'
+    implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-yaml'
+    configurations {
+        configureEach {
+            exclude module: 'spring-boot-starter-logging'
+        }
+    }
+
+}
+
+
+//tasks.withType(KotlinCompile) {
+//    kotlinOptions {
+//        freeCompilerArgs += '-Xjsr305=strict'
+//        jvmTarget = '17'
+//    }
+//}
+//
+//tasks.named('test') {
+//    useJUnitPlatform()
+//}
