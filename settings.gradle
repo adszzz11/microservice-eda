@@ -1,2 +1,2 @@
 rootProject.name = 'microservice-eda'
-include 'bundle-project'
+include 'Rental-Step0'
